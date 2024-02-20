@@ -17,11 +17,7 @@ package com.mirage.geo;
  */
 
 import com.mirage.geo.GeociodingServiceGrpc.GeociodingServiceImplBase;
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.springframework.stereotype.Service;
 
