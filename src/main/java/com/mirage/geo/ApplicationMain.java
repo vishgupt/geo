@@ -5,13 +5,14 @@ import io.grpc.ServerBuilder;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class ApplicationMain {
 
   private static final Logger logger = Logger.getLogger(ApplicationMain.class.getName());
-
   private Server server;
-
   private void start() throws IOException {
     /* The port on which the server should run */
     int port = 50051;
@@ -53,9 +54,8 @@ public class ApplicationMain {
   /**
    * Main launches the server from the command line.
    */
+
   public static void main(String[] args) throws IOException, InterruptedException {
-    final ApplicationMain applicationMain = new ApplicationMain();
-    applicationMain.start();
-    applicationMain.blockUntilShutdown();
+    SpringApplication.run(ApplicationMain.class, args);
   }
 }

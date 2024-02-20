@@ -23,15 +23,18 @@ import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-import net.devh.boot.grpc.server.service.GrpcService;
+import org.springframework.stereotype.Service;
+
 
 /**
  * Server that manages startup/shutdown of a {@code Greeter} server.
  */
+@Service
 public class GeocodingServiceServer {
 
   private static final Logger logger = Logger.getLogger(GeocodingServiceServer.class.getName());
 
+  @org.lognet.springboot.grpc.GRpcService
   static class GeocodingServiceImpl extends GeociodingServiceImplBase {
     @Override
     public void getGeocode(GetGeocodeRequest req,
